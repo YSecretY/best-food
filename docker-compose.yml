@@ -1,0 +1,22 @@
+﻿services:
+  best-food:
+    image: best-food
+    container_name: BestFood.Api
+    build:
+      context: .
+      dockerfile: src/BestFood/Dockerfile
+    ports:
+      - "8080:8080"
+      - "5001:5001"
+  
+  best-food.database:
+    image: postgres:latest
+    container_name: BestFood.Database
+    environment:
+      - POSTGRES_DB=best-food
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - "12345:5432"

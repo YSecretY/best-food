@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89A768EF-081E-4B67-9C0B-EBEDFC875EC6}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{325986D3-F983-412A-B2C0-1DBF916DD699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood", "src\BestFood\BestFood.csproj", "{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{C037AFF1-1187-46A9-8F49-0CD8A9A94C8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "users", "users", "{6CA43F32-716A-4497-85F2-DA98C4E4E428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Users.Infrastructure", "src\modules\users\BestFood.Modules.Users.Infrastructure\BestFood.Modules.Users.Infrastructure.csproj", "{47E96C76-75C4-4DE5-AD47-874FF62726BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Users.Application", "src\modules\users\BestFood.Modules.Users.Application\BestFood.Modules.Users.Application.csproj", "{21F19D84-3713-4A75-9904-5A5CA841715D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Users.Domain", "src\modules\users\BestFood.Modules.Users.Domain\BestFood.Modules.Users.Domain.csproj", "{4463A626-4877-4331-AA62-20DA77D6EA0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Users.Presentation", "src\modules\users\BestFood.Modules.Users.Presentation\BestFood.Modules.Users.Presentation.csproj", "{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{491CF429-98EB-4A5C-A782-0A5F57D85893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Shared.Domain", "src\modules\shared\BestFood.Modules.Shared.Domain\BestFood.Modules.Shared.Domain.csproj", "{86226CE6-ADFC-416D-831F-D29A07BD954E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Shared.Presentation", "src\modules\shared\BestFood.Modules.Shared.Presentation\BestFood.Modules.Shared.Presentation.csproj", "{F744F58B-8D34-461E-A1E3-3976115E3414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Shared.Application", "src\modules\shared\BestFood.Modules.Shared.Application\BestFood.Modules.Shared.Application.csproj", "{F45D65A6-982F-4B65-A489-3D5E21DCEA9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestFood.Modules.Shared.Infrastructure", "src\modules\shared\BestFood.Modules.Shared.Infrastructure\BestFood.Modules.Shared.Infrastructure.csproj", "{4DAFE84E-69AD-4546-8035-120C6E2BCB7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E96C76-75C4-4DE5-AD47-874FF62726BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E96C76-75C4-4DE5-AD47-874FF62726BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E96C76-75C4-4DE5-AD47-874FF62726BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E96C76-75C4-4DE5-AD47-874FF62726BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F19D84-3713-4A75-9904-5A5CA841715D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F19D84-3713-4A75-9904-5A5CA841715D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F19D84-3713-4A75-9904-5A5CA841715D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F19D84-3713-4A75-9904-5A5CA841715D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4463A626-4877-4331-AA62-20DA77D6EA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4463A626-4877-4331-AA62-20DA77D6EA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4463A626-4877-4331-AA62-20DA77D6EA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4463A626-4877-4331-AA62-20DA77D6EA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86226CE6-ADFC-416D-831F-D29A07BD954E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86226CE6-ADFC-416D-831F-D29A07BD954E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86226CE6-ADFC-416D-831F-D29A07BD954E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86226CE6-ADFC-416D-831F-D29A07BD954E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F744F58B-8D34-461E-A1E3-3976115E3414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F744F58B-8D34-461E-A1E3-3976115E3414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F744F58B-8D34-461E-A1E3-3976115E3414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F744F58B-8D34-461E-A1E3-3976115E3414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45D65A6-982F-4B65-A489-3D5E21DCEA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45D65A6-982F-4B65-A489-3D5E21DCEA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45D65A6-982F-4B65-A489-3D5E21DCEA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45D65A6-982F-4B65-A489-3D5E21DCEA9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAFE84E-69AD-4546-8035-120C6E2BCB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAFE84E-69AD-4546-8035-120C6E2BCB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAFE84E-69AD-4546-8035-120C6E2BCB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAFE84E-69AD-4546-8035-120C6E2BCB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C3EEA9F-5803-4682-B9D0-3F25361DBBD1} = {325986D3-F983-412A-B2C0-1DBF916DD699}
+		{C037AFF1-1187-46A9-8F49-0CD8A9A94C8A} = {325986D3-F983-412A-B2C0-1DBF916DD699}
+		{6CA43F32-716A-4497-85F2-DA98C4E4E428} = {C037AFF1-1187-46A9-8F49-0CD8A9A94C8A}
+		{47E96C76-75C4-4DE5-AD47-874FF62726BD} = {6CA43F32-716A-4497-85F2-DA98C4E4E428}
+		{21F19D84-3713-4A75-9904-5A5CA841715D} = {6CA43F32-716A-4497-85F2-DA98C4E4E428}
+		{4463A626-4877-4331-AA62-20DA77D6EA0C} = {6CA43F32-716A-4497-85F2-DA98C4E4E428}
+		{3CCFA200-60B1-4FA3-A468-D7AA3F3412EE} = {6CA43F32-716A-4497-85F2-DA98C4E4E428}
+		{491CF429-98EB-4A5C-A782-0A5F57D85893} = {C037AFF1-1187-46A9-8F49-0CD8A9A94C8A}
+		{86226CE6-ADFC-416D-831F-D29A07BD954E} = {491CF429-98EB-4A5C-A782-0A5F57D85893}
+		{F744F58B-8D34-461E-A1E3-3976115E3414} = {491CF429-98EB-4A5C-A782-0A5F57D85893}
+		{F45D65A6-982F-4B65-A489-3D5E21DCEA9A} = {491CF429-98EB-4A5C-A782-0A5F57D85893}
+		{4DAFE84E-69AD-4546-8035-120C6E2BCB7B} = {491CF429-98EB-4A5C-A782-0A5F57D85893}
+	EndGlobalSection
+EndGlobal

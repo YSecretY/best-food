@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\shared\BestFood.Modules.Shared.Infrastructure\BestFood.Modules.Shared.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\shared\BestFood.Modules.Shared.Presentation\BestFood.Modules.Shared.Presentation.csproj" />
+      <ProjectReference Include="..\BestFood.Modules.Users.Application\BestFood.Modules.Users.Application.csproj" />
+      <ProjectReference Include="..\BestFood.Modules.Users.Domain\BestFood.Modules.Users.Domain.csproj" />
+      <ProjectReference Include="..\BestFood.Modules.Users.Presentation\BestFood.Modules.Users.Presentation.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Database\Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    </ItemGroup>
+
+</Project>
