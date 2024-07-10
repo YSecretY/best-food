@@ -2,15 +2,16 @@ using BestFood.Modules.Shared.Domain.Events;
 
 namespace BestFood.Modules.Users.Domain.Users.DomainEvents;
 
-public sealed class UserRegisteredDomainEvent(string email, string nickname, UserRole role, DateTime occuredAt) : IEvent
+public sealed class UserRegisteredDomainEvent(string email, string nickname, UserRole role, DateTime occuredAt)
+    : IEvent
 {
-    public Guid Id { get; } = Guid.NewGuid();
+    public Guid Id { get; set; } = Guid.NewGuid();
 
-    public string Email = email;
+    public string Email { get; set; } = email;
 
-    public string Nickname = nickname;
+    public string Nickname { get; set; } = nickname;
 
-    public UserRole Role = role;
+    public UserRole Role { get; set; } = role;
 
-    public DateTime OccuredAt { get; } = occuredAt;
+    public DateTime OccuredAt { get; set; } = occuredAt;
 }

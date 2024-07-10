@@ -2,7 +2,7 @@ namespace BestFood.Modules.Users.Infrastructure.Services.Jwt;
 
 public class JwtSettings
 {
-    public const string SectionName = nameof(JwtSettings);
+    public const string SectionName = "JwtOptions";
 
     public string Secret { get; init; } = null!;
 

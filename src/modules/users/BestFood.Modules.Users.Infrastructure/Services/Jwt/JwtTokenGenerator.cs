@@ -31,7 +31,7 @@ public class JwtTokenGenerator(
         var signingCredentials = new SigningCredentials
         (
             new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret).ToArray()),
-            SecurityAlgorithms.Sha256
+            SecurityAlgorithms.HmacSha256
         );
 
         var securityToken = new JwtSecurityToken
@@ -57,7 +57,7 @@ public class JwtTokenGenerator(
         var signingCredentials = new SigningCredentials
         (
             new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret).ToArray()),
-            SecurityAlgorithms.Sha256
+            SecurityAlgorithms.HmacSha256
         );
 
         var securityToken = new JwtSecurityToken

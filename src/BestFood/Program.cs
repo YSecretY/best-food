@@ -16,7 +16,7 @@ builder.Services.AddProblemDetails();
 
 #region Shared
 
-builder.Services.AddSharedInfrastructure();
+builder.Services.AddSharedInfrastructure([UsersModule.ConfigureConsumers]);
 builder.Services.AddSharedApplication([BestFood.Modules.Users.Application.AssemblyReference.Assembly]);
 builder.Services.AddSharedPresentation();
 

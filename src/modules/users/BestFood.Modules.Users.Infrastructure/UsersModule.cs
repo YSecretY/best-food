@@ -1,4 +1,5 @@
 using System.Text;
+using BestFood.Modules.Shared.Infrastructure.Emails;
 using BestFood.Modules.Users.Application.Services.Jwt;
 using BestFood.Modules.Users.Application.Services.Password;
 using BestFood.Modules.Users.Domain.Users.Database;
@@ -6,6 +7,8 @@ using BestFood.Modules.Users.Infrastructure.Services;
 using BestFood.Modules.Users.Infrastructure.Services.Jwt;
 using BestFood.Modules.Users.Infrastructure.Services.Password;
 using BestFood.Modules.Users.Infrastructure.Users.Database;
+using BestFood.Modules.Users.Infrastructure.Users.Events.Consumers;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,37 +24,38 @@ public static class UsersModule
         services.AddControllers()
             .AddApplicationPart(Presentation.AssemblyReference.Assembly);
 
-    public static IServiceCollection AddUsersModule(this IServiceCollection services, IConfiguration configuration)
+    public static void AddUsersModule(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddInfrastructure(configuration);
 
         MapControllers(services);
-
-        return services;
+    }
+    
+    public static void ConfigureConsumers(IRegistrationConfigurator registrationConfigurator)
+    {
+        registrationConfigurator.AddConsumer<UserRegisteredEventConsumer>();
     }
 
-    private static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddPersistence(configuration);
 
         services.AddAuth(configuration);
 
-        services.AddTransient<IPasswordService, PasswordService>();
+        services.AddConsumers(configuration);
 
-        return services;
+        services.AddTransient<IPasswordService, PasswordService>();
     }
 
-    private static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    private static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
         var dbConnectionString = configuration.GetConnectionString("Database") ?? throw new NullReferenceException("Database connection string is not found.");
 
         services.AddDbContext<IUsersDbContext, UsersDbContext>(options =>
             options.UseNpgsql(dbConnectionString, optionsBuilder => optionsBuilder.MigrationsHistoryTable(Schemas.Users)));
-
-        return services;
     }
 
-    private static IServiceCollection AddAuth(this IServiceCollection services, IConfiguration configuration)
+    private static void AddAuth(this IServiceCollection services, IConfiguration configuration)
     {
         var jwtSettings = new JwtSettings();
 
@@ -73,7 +77,11 @@ public static class UsersModule
                 ValidAudience = jwtSettings.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret))
             });
+    }
 
-        return services;
+    private static void AddConsumers(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.Configure<SmtpClientSettings>(configuration.GetRequiredSection(SmtpClientSettings.SectionName) ??
+                                               throw new KeyNotFoundException("Couldn't find the smtp client configurations."));
     }
 }

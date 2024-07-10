@@ -7,7 +7,7 @@ namespace BestFood.Modules.Shared.Application;
 
 public static class ApplicationConfiguration
 {
-    public static IServiceCollection AddSharedApplication(this IServiceCollection services, Assembly[] assemblies)
+    public static void AddSharedApplication(this IServiceCollection services, Assembly[] assemblies)
     {
         services.AddMediatR(cfg =>
         {
@@ -16,7 +16,5 @@ public static class ApplicationConfiguration
         });
 
         services.AddValidatorsFromAssemblies(assemblies, includeInternalTypes: true);
-
-        return services;
     }
 }

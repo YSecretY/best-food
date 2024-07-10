@@ -26,6 +26,8 @@ public sealed class User
     [MaxLength(SharedConstants.Email.MaxLength)]
     public string Email { get; private set; }
 
+    public bool EmailConfirmed { get; private set; }
+
     [MaxLength(SharedConstants.PasswordHash.MaxLength)]
     public string PasswordHash { get; private set; }
 
@@ -63,4 +65,7 @@ public sealed class User
             createdAt: createdAt
         );
     }
+
+    public void ConfirmEmail() =>
+        EmailConfirmed = true;
 }

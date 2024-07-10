@@ -5,10 +5,8 @@ namespace BestFood.Modules.Shared.Presentation;
 
 public static class PresentationConfiguration
 {
-    public static IServiceCollection AddSharedPresentation(this IServiceCollection services)
+    public static void AddSharedPresentation(this IServiceCollection services)
     {
         services.AddMapster();
-
-        return services;
     }
 }

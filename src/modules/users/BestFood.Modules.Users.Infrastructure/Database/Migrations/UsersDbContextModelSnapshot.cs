@@ -37,6 +37,9 @@ namespace BestFood.Modules.Users.Infrastructure.Database.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Nickname")
                         .IsRequired()
                         .HasMaxLength(100)

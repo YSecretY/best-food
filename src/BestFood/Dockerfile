@@ -7,10 +7,18 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["BestFood/BestFood.csproj", "BestFood/"]
-RUN dotnet restore "BestFood/BestFood.csproj"
+COPY ["src/BestFood/BestFood.csproj", "src/BestFood/"]
+COPY ["src/modules/users/BestFood.Modules.Users.Infrastructure/BestFood.Modules.Users.Infrastructure.csproj", "src/modules/users/BestFood.Modules.Users.Infrastructure/"]
+COPY ["src/modules/users/BestFood.Modules.Users.Domain/BestFood.Modules.Users.Domain.csproj", "src/modules/users/BestFood.Modules.Users.Domain/"]
+COPY ["src/modules/shared/BestFood.Modules.Shared.Domain/BestFood.Modules.Shared.Domain.csproj", "src/modules/shared/BestFood.Modules.Shared.Domain/"]
+COPY ["src/modules/shared/BestFood.Modules.Shared.Presentation/BestFood.Modules.Shared.Presentation.csproj", "src/modules/shared/BestFood.Modules.Shared.Presentation/"]
+COPY ["src/modules/users/BestFood.Modules.Users.Presentation/BestFood.Modules.Users.Presentation.csproj", "src/modules/users/BestFood.Modules.Users.Presentation/"]
+COPY ["src/modules/users/BestFood.Modules.Users.Application/BestFood.Modules.Users.Application.csproj", "src/modules/users/BestFood.Modules.Users.Application/"]
+COPY ["src/modules/shared/BestFood.Modules.Shared.Application/BestFood.Modules.Shared.Application.csproj", "src/modules/shared/BestFood.Modules.Shared.Application/"]
+COPY ["src/modules/shared/BestFood.Modules.Shared.Infrastructure/BestFood.Modules.Shared.Infrastructure.csproj", "src/modules/shared/BestFood.Modules.Shared.Infrastructure/"]
+RUN dotnet restore "src/BestFood/BestFood.csproj"
 COPY . .
-WORKDIR "/src/BestFood"
+WORKDIR "/src/src/BestFood"
 RUN dotnet build "BestFood.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
